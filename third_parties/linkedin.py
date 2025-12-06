@@ -16,7 +16,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str, mock: bool = False):
         linkedin_profile_url = os.getenv("LINKEDIN_SCRAPER_PROFILE_MOCK_URL")
         response = requests.get(linkedin_profile_url, timeout=10)
     else:
-        api_endpoint = "https://api.scrapin.io/enrichment/profile"
+        api_endpoint = "https://api.scrapin.io/v1/enrichment/profile"
         params = {
             "apikey": os.getenv("SCRAPIN_API_KEY"),
             "linkedInUrl": linkedin_profile_url,
